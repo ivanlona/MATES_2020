@@ -43,7 +43,6 @@ def mcm_bruto(n1,n2):
 
 
 
-
 #mcm_bruto(11*13*17*23,29*31*37*43)
 def min_mul(numeros):
   v=2
@@ -132,12 +131,14 @@ def mcd_mul(numeros):
 
 def divi_fracc(fracc1,fracc2):
   r=fracc(fracc1.nu*fracc2.de,fracc1.de*fracc2.nu)
-  fracc_simpl(r)
-  print(r)
+  r=(fracc_simpl(r))
+  return(r)
 
 
-
-
+def poten_fracc(fracc1,exponente):
+  r=fracc(fracc1.nu**exponente,fracc1.de**exponente)
+  r=(fracc_simpl(r))
+  return(r)
 
 
 
@@ -222,5 +223,14 @@ def test():
   a=fracc(3,2)
   b=fracc(1,3)
   divi_fracc(a,b)
+  print("")
+
+
+  print("poten_fracc(fracc1,exponente)")
+  print("calcula la potencia de una division")
+  print("q=fracc(4,8)")
+  print("Ej:poten_fracc()")
+  q=fracc(4,8)
+  print(poten_fracc(q,4))
   print("")
 test()
