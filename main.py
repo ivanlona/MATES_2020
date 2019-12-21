@@ -63,6 +63,23 @@ def min_mul(numeros):
 #******************************************************
 
 
+def mcd(numero_uno,numero_dos):
+  j=factores(numero_uno)
+  t=factores(numero_dos)
+  resultado=[]
+  for g in range(len(t)):
+      for k in range(len(j)):
+        if t[g]==j[k]:
+          resultado.append(t[g])
+
+          j.remove(j[k])
+          break
+  
+  total=1
+  for m in resultado:
+    total=total*m 
+  return(total)
+
 
 class fracc:
     def __init__(self, numerador, denominador):
@@ -91,25 +108,6 @@ def suma(a, b):
     r=fracc(int(numerador_total),comun_denominador)
     r=fracc_simpl(r)
     return r
-
-
-
-def mcd(numero_uno,numero_dos):
-  j=factores(numero_uno)
-  t=factores(numero_dos)
-  resultado=[]
-  for g in range(len(t)):
-      for k in range(len(j)):
-        if t[g]==j[k]:
-          resultado.append(t[g])
-
-          j.remove(j[k])
-          break
-  
-  total=1
-  for m in resultado:
-    total=total*m 
-  return(total)
 
 
 def mcd_bruto(n101,n102):
